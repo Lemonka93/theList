@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div class="container" id="app">
+      <div class="card">
+        <h1>{{ message }}</h1>
+        <div class="form-control">
+          <input
+            type="text"
+            v-bind:placeholder="inputPlaceholder"
+            v-bind:value="inputValue"
+            v-on:input="inputChangeHandler"
+            v-on:keypress.enter="addNewNote"
+          />
+        </div>
+        <button class="btn primary" v-on:click="addNewNote">
+          {{ btnAdd }}
+        </button>
+        <hr />
+        <ul class="list">
+          <li class="list-item" v-for="(myNote, index) in notes">
+            {{index+1}}. {{myNote}}
+            <button class="btn danger" v-on:click="removeNote(index)">
+              {{btnRemove}}
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
