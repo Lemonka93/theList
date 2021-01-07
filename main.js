@@ -1,4 +1,5 @@
-// console.log(localStorage.getItem("notes"));
+if (!localStorage.getItem("notes"))
+  localStorage.setItem("notes", JSON.stringify([]));
 const App = {
   data() {
     return {
