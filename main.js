@@ -3,11 +3,11 @@ if (!localStorage.getItem("notes"))
 const App = {
   data() {
     return {
-      message: "Новогодний дожор:",
-      inputPlaceholder: "Ввведите блюдо",
+      message: "Список дел:",
+      inputPlaceholder: "Введите задачу",
       inputValue: "",
       btnAdd: "Добавить",
-      btnRemove: "Уничтожить доказательство дожора",
+      btnRemove: "Удалить",
       notes: JSON.parse(localStorage.getItem("notes")),
     };
   },
